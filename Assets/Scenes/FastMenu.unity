@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: "Configura\xE7\xF5es"
 --- !u!222 &427538918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -254,7 +254,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: 'Sair
+
+'
 --- !u!222 &464833320
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -403,7 +405,7 @@ GameObject:
   - component: {fileID: 615228339}
   - component: {fileID: 615228338}
   m_Layer: 5
-  m_Name: ConfigButton
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +423,7 @@ RectTransform:
   m_Children:
   - {fileID: 1260062102}
   m_Father: {fileID: 1029324986}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -625,7 +627,7 @@ GameObject:
   - component: {fileID: 859882260}
   - component: {fileID: 859882259}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: ConfigButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,7 +645,7 @@ RectTransform:
   m_Children:
   - {fileID: 427538916}
   m_Father: {fileID: 1029324986}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -735,6 +737,7 @@ GameObject:
   - component: {fileID: 1029324985}
   - component: {fileID: 1029324984}
   - component: {fileID: 1029324983}
+  - component: {fileID: 1029324987}
   m_Layer: 5
   m_Name: CanvasFastMenu
   m_TagString: Untagged
@@ -810,8 +813,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 551837506}
-  - {fileID: 859882258}
   - {fileID: 615228337}
+  - {fileID: 859882258}
   - {fileID: 739299366}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -821,6 +824,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1029324987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1029324982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220949ba7fa87a246a0451c7b4331673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1062518149
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +983,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: 'Continuar
+
+'
 --- !u!222 &1260062104
 CanvasRenderer:
   m_ObjectHideFlags: 0
