@@ -4,44 +4,39 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public float speedQuantity = 3f;
-    private Rigidbody2D bori;
-    public bool grounded;
-    public Vector2 jumpVector;
-    public Transform grounder;
-    public float radius;
-    public LayerMask ground;
-
+    public float maxSpeed;
+	[SerializeField] private float speed;
+    private Rigidbody2D rb;
+    public bool onGround;
+    public bool facingRight = true;
 
     void Start () {
-        bori = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        speed = maxSpeed;
+        speed *= 10;
     }
-    
-    
+    void FixedUpdate() {
+       Movement();
+    }
+    void Movement(){
+         float i = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(i * speed * Time.deltaTime, rb.velocity.y);
+
+        if(i > 0 && !facingRight){
+            Flip();
+        }
+        else if(i < 0 && facingRight){
+            Flip();
+        }
+    }
+    void Flip(){
+        facingRight = !facingRight;
+
+        Vector2 scale = transform.localScale;
+        scale.x *= -1;
+    }
     void Update () {
-        
-        if(Input.GetKey(KeyCode.A))
-        {
-            bori.velocity = new Vector2(-speedQuantity, bori.velocity.y);
-            transform.localScale = new Vector3 (-1,1,1);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            bori.velocity = new Vector2(speedQuantity, bori.velocity.y);
-            transform.localScale = new Vector3 (1,1,1);
-        }
-        else
-        {
-            bori.velocity = new Vector2(0, bori.velocity.y);
-        }
 
-
-        grounded = Physics2D.OverlapCircle(grounder.transform.position, radius, ground);
-
-        if(Input.GetKey(KeyCode.W) && grounded == true)
-        {
-            bori.AddForce(jumpVector, ForceMode2D.Force);
-        }
     }
 
 }
