@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour {
 
-	public int currentLife;
+	public int CurrentLife { get; set; }
 	public int maxLife;
     public Image life_Hud;
 
 	public Sprite[] lifeSprite;
 	
 	void Start () {
-		currentLife = maxLife;
+		CurrentLife = maxLife;
 	}
 	void Update () {
-        switch (currentLife)
+        switch (CurrentLife)
         {
             case 0:
                 life_Hud.sprite = lifeSprite[0];

@@ -30,10 +30,10 @@ public class MapGeneration : MonoBehaviour {
 		}
 		foreach (ColorTile tile in colorTile)
 		{
-			//if(tile.color.Equals(pixelColor)){
+			if(tile.color.Equals(pixelColor)){
 				Vector2 position = new Vector2(x, y);
 				Instantiate(tile.prefab, position, Quaternion.identity, transform);
-			//}
+			}
 		}
 	}
 	void Update () {
