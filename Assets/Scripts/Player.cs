@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] private float speed;
     private Rigidbody2D rb;
     public bool onGround;
-    public bool Jump;
+    public bool jump;
     public bool doubleJump;
     public bool facingRight = true;
     public float jumpForce;
@@ -27,18 +27,16 @@ public class Player : MonoBehaviour {
     void FixedUpdate() {
        Movement();
        onGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-       if(onGround)
-            doubleJump = false;
 
-       if(Input.GetKeyDown(KeyCode.Space) && (onGround || !doubleJump))         
-            doubleJump = true;
+       if(Input.GetKeyDown(KeyCode.Space) && onGround)         
+            jump = true;
 
 
-       if(Jump)    
+       if(jump)    
        {
            rb.velocity = Vector2.zero;
            rb.AddForce(Vector2.up * jumpForce);
-           Jump = false;
+           jump = false;
        } 
     }
     void Movement(){
