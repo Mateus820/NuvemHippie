@@ -60,12 +60,12 @@ public class Player : MonoBehaviour {
     }
 
     void Update ()
-{
-    transform.Translate(playerSpeed * Time.deltaTime, 0f, 0f);  //makes player run
-
-    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))  //makes player jump
     {
-        GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
-}
-}
+        transform.Translate(playerSpeed * Time.deltaTime, 0f, 0f);  //makes player run
+
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))  //makes player jump
+        {
+            GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+        }
+    }
 }

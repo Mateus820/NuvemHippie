@@ -5,7 +5,6 @@ using UnityEngine;
 public class MapGeneration : MonoBehaviour {
 
 	public Texture2D map;
-
 	public ColorTile[] colorTile;
 
 	void Start () {
@@ -22,6 +21,7 @@ public class MapGeneration : MonoBehaviour {
 		}
 	}
 	void GenerateTile(int x, int y){
+		
 		Color pixelColor = map.GetPixel(x, y);
 		Debug.Log(pixelColor);
 		if(pixelColor.a == 0){
@@ -35,8 +35,5 @@ public class MapGeneration : MonoBehaviour {
 				Instantiate(tile.prefab, position, Quaternion.identity, transform);
 			//}
 		}
-	}
-	void Update () {
-		
 	}
 }
