@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
 	public PlayerLife playerLife;
-	private const string FILE_PATH = "saveGameData.dat";
+	public string FILE_PATH = "saveGameData.dat";
 
 	void Awake() {
 		if(instance == null){
@@ -21,7 +21,12 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	void Start() {
-		Load();
+		if(PlayerPrefs.GetInt("Mode") == 0){
+			SaveGame();
+		}
+		else if(PlayerPrefs.GetInt("Mode") == 1){
+			LoadGame();
+		}
 	}
 	public void SaveGame()
 	{
@@ -36,7 +41,7 @@ public class GameManager : MonoBehaviour {
 		file.Close();
 
 	}
-	public void Load()
+	public void LoadGame()
 	{
 		if (File.Exists(Path.Combine(Application.streamingAssetsPath, FILE_PATH))){
 			BinaryFormatter bf = new BinaryFormatter();
