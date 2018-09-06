@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8cf3fd13771b343b5eb02f13909f15, type: 3}
   m_Name: WhipRainbow
   m_EditorClassIdentifier: 
-  name: 
-  id: 0
+  name: Whip Rainbow
+  id: 1
   sprite: {fileID: 0}
   description: 
