@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 	}
 	void Start() {
+		print(PlayerPrefs.GetInt("Mode"));
+
 		if(PlayerPrefs.GetInt("Mode") == 0){
 			SaveGame();
 		}
@@ -56,5 +58,6 @@ public class GameManager : MonoBehaviour {
 	}
 	void OnApplicationQuit() {
 		SaveGame();
+		print("Jogo Salvo");
 	}
 }
