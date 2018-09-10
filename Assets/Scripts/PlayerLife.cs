@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour {
 
@@ -25,8 +26,10 @@ public class PlayerLife : MonoBehaviour {
         if(CurrentLife > maxLife){
             CurrentLife = maxLife;
         }
-        else if(CurrentLife < 0){
-            CurrentLife = 0;
+        else if(CurrentLife <= 0){
+            CurrentLife = maxLife;
+            GameManager.instance.SaveGame();
+            SceneManager.LoadScene("GameOver");
         }
 	}
 }

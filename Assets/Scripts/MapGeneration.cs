@@ -23,17 +23,18 @@ public class MapGeneration : MonoBehaviour {
 	void GenerateTile(int x, int y){
 		
 		Color pixelColor = map.GetPixel(x, y);
-		Debug.Log(pixelColor);
+		
 		if(pixelColor.a == 0){
-			Debug.Log("Transparente");
+			//Ignore is a transparrent pixel;
 			return;
 		}
 		foreach (ColorTile tile in colorTile)
 		{
-			//if(tile.color.Equals(pixelColor)){
+			if(tile.color.Equals(pixelColor))
+			{
 				Vector2 position = new Vector2(x, y);
 				Instantiate(tile.prefab, position, Quaternion.identity, transform);
-			//}
+			}
 		}
 	}
 }

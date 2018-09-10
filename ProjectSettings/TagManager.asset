@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerLife
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
+  - Enemies
+  - Player
+  - EnemiesCollider
   - 
   - 
   - 
@@ -43,6 +44,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 311270625
+    locked: 0
+  - name: Enemies
+    uniqueID: 30120697
     locked: 0
   - name: Map
     uniqueID: 3427519703

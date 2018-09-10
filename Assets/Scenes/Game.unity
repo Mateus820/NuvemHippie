@@ -140,10 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5674e5aa002287c41970f685b6f11f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 2800000, guid: 3fafccee93d03c14ead860f489c39707, type: 3}
+  map: {fileID: 2800000, guid: 82ea5a901f00ef64b8398c9b47543acb, type: 3}
   colorTile:
-  - color: {r: 0, g: 0, b: 0, a: 0}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 1548841535413384, guid: 96a5a83187a78cd4b9b490caf50107e5, type: 2}
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1980023829437006, guid: 5ce0592cce4039a4c8583821969d0412, type: 2}
 --- !u!4 &14667679
 Transform:
   m_ObjectHideFlags: 0
@@ -459,7 +461,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 664014136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +525,7 @@ GameObject:
   - component: {fileID: 691481250}
   m_Layer: 5
   m_Name: Life_Hud
-  m_TagString: Untagged
+  m_TagString: PlayerLife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258897013}
   - component: {fileID: 1258897014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +695,7 @@ GameObject:
   - component: {fileID: 1565795214}
   - component: {fileID: 1565795217}
   - component: {fileID: 1565795215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -748,7 +750,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565795213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0.3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1258897013}
@@ -813,7 +815,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
+  m_BackGroundColor: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -847,7 +849,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749764694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.37, y: 1.5, z: -10}
+  m_LocalPosition: {x: 4.37, y: 1.5, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -867,6 +869,6 @@ MonoBehaviour:
   xSuave: 0.15
   ySuave: 0.15
   limite: 0
-  minCam: {x: 4, y: 2, z: -10}
-  maxCam: {x: 10, y: 10, z: -10}
+  minCam: {x: 4, y: 2, z: -20}
+  maxCam: {x: 55, y: 10, z: -20}
   player: {fileID: 1565795213}
