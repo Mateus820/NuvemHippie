@@ -631,7 +631,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1258897012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.17, y: -0.85, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1565795216}
@@ -748,7 +748,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565795213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 1.79, z: 0}
+  m_LocalPosition: {x: 0.3, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1258897013}
@@ -847,7 +847,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749764694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 4.37, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -864,10 +864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee276f1557fdc684da587f6842ea9ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
-  target: {fileID: 1565795216}
-  maxMin: 0
-  xMin: 15.4
-  yMin: 3.2
-  xMax: 7.3
-  yMax: 8
+  xSuave: 0.15
+  ySuave: 0.15
+  limite: 0
+  minCam: {x: 4, y: 2, z: -10}
+  maxCam: {x: 10, y: 10, z: -10}
+  player: {fileID: 1565795213}

@@ -11,6 +11,9 @@ public class CameraFollow : MonoBehaviour {
 	public Vector3 minCam , maxCam;
 	public GameObject player;
 
+	void Start() {
+		limite = true;	
+	}
 	void FixedUpdate () {
 
         float xzin = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocidade.x, xSuave);
