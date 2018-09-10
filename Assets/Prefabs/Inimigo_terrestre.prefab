@@ -22,8 +22,7 @@ GameObject:
   - component: {fileID: 212443143774951080}
   - component: {fileID: 50052914510641384}
   - component: {fileID: 61783404962895366}
-  - component: {fileID: 114619839235861978}
-  - component: {fileID: 114758893900733298}
+  - component: {fileID: 114627769715428652}
   m_Layer: 0
   m_Name: Inimigo_terrestre
   m_TagString: Untagged
@@ -89,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114619839235861978
+--- !u!114 &114627769715428652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,23 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1811350643004048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: eb54451d734178d4bbe9462f52c8357e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114758893900733298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1811350643004048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8b5092939453140a36c5d84f20295b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Inimigo_terrestre: {fileID: 1811350643004048}
-  TempoSpawn: 1
-  PontosdeSpawn: []
+  velocidade: -2
 --- !u!212 &212443143774951080
 SpriteRenderer:
   m_ObjectHideFlags: 1
