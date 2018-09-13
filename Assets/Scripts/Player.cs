@@ -18,9 +18,13 @@ public class Player : MonoBehaviour {
     public Transform groundCheck;
 
 
-
+    void Reset(){
+        
+    }
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        GameManager.instance.player = this;
+        GameManager.instance.playerRb = rb;
         speed = maxSpeed;
         speed *= 10;
     }

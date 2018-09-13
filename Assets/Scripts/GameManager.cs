@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
 	public PlayerLife playerLife;
+	public Player player;
+	public Rigidbody2D playerRb;
 	public string FILE_PATH = "saveGameData.dat";
 
 	void Awake() {
@@ -21,7 +23,8 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	void Start() {
-
+		playerRb = player.GetComponent<Rigidbody2D>();
+		
 		print(PlayerPrefs.GetInt("Mode"));
 
 		if(PlayerPrefs.GetInt("Mode") == 0){
@@ -46,7 +49,12 @@ public class GameManager : MonoBehaviour {
 			save.lifes = playerLife.CurrentLife;
 		}
 		save.points = 0;
-		save.posx = transform.position.x;
+		save.posx = playerRb.position.x;
+		save.posy = playerRb.position.y;
+
+		print(playerRb.position.x);
+		print(playerRb.position.y);
+
 		bf.Serialize(file, save);
 		file.Close();
 
@@ -62,6 +70,9 @@ public class GameManager : MonoBehaviour {
 			file.Close();
 
 			playerLife.CurrentLife = save.lifes;
+			Vector2 playerPosition = new Vector2(save.posx, save.posy);
+			playerRb.position = playerPosition;
+			print(playerPosition);
 		}
 	}
 	void OnApplicationQuit() {
