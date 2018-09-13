@@ -14,6 +14,7 @@ public class PlayerLife : MonoBehaviour {
 	
 	void Start () {
 		CurrentLife = maxLife;
+        GameManager.instance.playerLife = this;
 	}
 	void Update () {
         if(CurrentLife >= 0 && CurrentLife <= maxLife){
@@ -27,7 +28,6 @@ public class PlayerLife : MonoBehaviour {
             CurrentLife = maxLife;
         }
         else if(CurrentLife <= 0){
-            CurrentLife = maxLife;
             GameManager.instance.SaveGame();
             SceneManager.LoadScene("GameOver");
         }
