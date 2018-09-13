@@ -8,4 +8,5 @@ class SaveGameData
 {
 	public int lifes;
 	public int points;
+	public float posx, posy, posz;
 }

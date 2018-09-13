@@ -14,13 +14,14 @@ public class GameManager : MonoBehaviour {
 	void Awake() {
 		if(instance == null){
 			instance = this;
+			DontDestroyOnLoad(gameObject);
 		}
 		else if(instance != this){
 			Destroy(gameObject);
 		}
-		DontDestroyOnLoad(gameObject);
 	}
 	void Start() {
+
 		print(PlayerPrefs.GetInt("Mode"));
 
 		if(PlayerPrefs.GetInt("Mode") == 0){
@@ -36,9 +37,16 @@ public class GameManager : MonoBehaviour {
 		FileStream file = File.Create(Path.Combine(Application.streamingAssetsPath, FILE_PATH));
 
 		SaveGameData save = new SaveGameData();
-		save.lifes = playerLife.CurrentLife;
-		save.points = 0;
 
+		//Erro ao sair do Jogo;
+		if(playerLife.CurrentLife <= 0){
+			save.lifes = 3;
+		}
+		else{
+			save.lifes = playerLife.CurrentLife;
+		}
+		save.points = 0;
+		save.posx = transform.position.x;
 		bf.Serialize(file, save);
 		file.Close();
 
