@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class MapGeneration : MonoBehaviour {
 
+	public int levelNumber;
 	public Texture2D map;
+	public CameraFollow cameraFollow;
+	public Level[] levels;
 	public ColorTile[] colorTile;
 
 	void Start () {
+		cameraFollow.minCam = levels[levelNumber].cameraMin;
+		cameraFollow.maxCam = levels[levelNumber].cameraMax;
 		GenerateLevel();
 	}
 	
 	void GenerateLevel(){
-		for (int x = 0; x < map.width; x++)
+		for (int x = 0; x < levels[levelNumber].map.width; x++)
 		{
-			for (int y = 0; y < map.height; y++)
+			for (int y = 0; y < levels[levelNumber].map.height; y++)
 			{
 				GenerateTile(x, y);
 			}
@@ -22,7 +27,7 @@ public class MapGeneration : MonoBehaviour {
 	}
 	void GenerateTile(int x, int y){
 		
-		Color pixelColor = map.GetPixel(x, y);
+		Color pixelColor = levels[levelNumber].map.GetPixel(x, y);
 		
 		if(pixelColor.a == 0){
 			//Ignore is a transparrent pixel;

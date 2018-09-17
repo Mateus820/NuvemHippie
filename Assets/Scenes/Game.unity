@@ -140,12 +140,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5674e5aa002287c41970f685b6f11f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 2800000, guid: 82ea5a901f00ef64b8398c9b47543acb, type: 3}
+  levelNumber: 0
+  map: {fileID: 2800000, guid: ff87275cd4a35584282330cc50b5117c, type: 3}
+  cameraFollow: {fileID: 1749764699}
+  levels:
+  - map: {fileID: 2800000, guid: 1a5d105c4a654e94f9a44f431a7c1755, type: 3}
+    number: 1
+    cameraMin: {x: 4, y: 2, z: -20}
+    cameraMax: {x: 118, y: 10, z: -20}
   colorTile:
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 1548841535413384, guid: 96a5a83187a78cd4b9b490caf50107e5, type: 2}
   - color: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 1980023829437006, guid: 5ce0592cce4039a4c8583821969d0412, type: 2}
+  - color: {r: 0, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1980023829437006, guid: 5ce0592cce4039a4c8583821969d0412, type: 2}
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1396837628943300, guid: 62fbe8592b729a844bb32fb424d61a56, type: 2}
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1119844605107250, guid: ce71d15f29f3ce24e9bcee2482e239b1, type: 2}
 --- !u!4 &14667679
 Transform:
   m_ObjectHideFlags: 0
@@ -609,6 +622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLife: {fileID: 691481250}
+  player: {fileID: 0}
+  playerRb: {fileID: 0}
   FILE_PATH: saveGameData.dat
 --- !u!1 &1258897012
 GameObject:

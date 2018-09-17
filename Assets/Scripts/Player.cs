@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
        } 
     }
     void Movement(){
-         float i = Input.GetAxisRaw("Horizontal");
+        float i = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(i * speed * Time.deltaTime, rb.velocity.y);
 
         if(i > 0 && !facingRight){
