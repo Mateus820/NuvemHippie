@@ -22,10 +22,9 @@ GameObject:
   - component: {fileID: 212976689426582156}
   - component: {fileID: 61704899856793614}
   - component: {fileID: 95983133878461170}
-  - component: {fileID: 114741080471193606}
   m_Layer: 9
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +42,7 @@ GameObject:
   - component: {fileID: 58386038118604754}
   m_Layer: 11
   m_Name: Earth_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,17 +152,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114741080471193606
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897299345692738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feabc612c21bb534db95b4732019ebed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114951548911113430
 MonoBehaviour:
   m_ObjectHideFlags: 1

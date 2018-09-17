@@ -11,18 +11,25 @@ public class Player : MonoBehaviour {
     public bool jump;
     public bool doubleJump;
     public bool facingRight = true;
+    public bool canReceiveDamage = true;
     public float jumpForce;
     public float playerSpeed;  //allows us to be able to change speed in Unity
     public Vector2 jumpHeight;
     
     public Transform groundCheck;
 
+    private PlayerLife playerLife;
+    private IEnumerator damageDlay;
+
+    public SpriteRenderer sprite;
 
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         speed = maxSpeed;
         speed *= 10;
+        sprite = GetComponentInParent<SpriteRenderer>();
+        playerLife = GameObject.FindGameObjectWithTag("PlayerLife").GetComponent<PlayerLife>();
     }
     void FixedUpdate() {
        Movement();
@@ -65,5 +72,36 @@ public class Player : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(canReceiveDamage) {
+		    print("Coll");
+		    if(other.gameObject.tag == "Enemy"){
+			    playerLife.CurrentLife--;
+		    }
+            
+        }
+	}
+
+    void DamageReceived() {
+        damageDlay = DamageDlay();
+        StartCoroutine (damageDlay);
+    }
+
+    IEnumerator DamageDlay() {
+        canReceiveDamage = false;
+        sprite.color = new Vector4(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Vector4(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Vector4(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Vector4(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Vector4(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Vector4(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+        canReceiveDamage = true;
     }
 }
