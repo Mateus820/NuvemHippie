@@ -8,8 +8,10 @@ public class PauseMenu : MonoBehaviour {
 	public static bool gameIsPaused = false, configIsClose = true;
 	public GameObject pauseMenuUI, configMenuUI, quitMenuUI;
 
+	void Start() {
+		gameIsPaused = false;
+	}
 	void Update () {
-
 		if (Input.GetKeyDown (KeyCode.Escape)) 
 		{
 			if (gameIsPaused) {
@@ -19,9 +21,7 @@ public class PauseMenu : MonoBehaviour {
 			{
 				Pause ();
 			}
-
 		}
-
 	}
 	public void Resume()
 	{
@@ -35,7 +35,6 @@ public class PauseMenu : MonoBehaviour {
 		Time.timeScale = 0f;
 		gameIsPaused = true;
 	}
-
 	public void ResumeButton()
 	{
 		Resume();
@@ -43,8 +42,8 @@ public class PauseMenu : MonoBehaviour {
 
 	public void ConfigButton()
 	{
-			configMenuUI.SetActive (true);
-			pauseMenuUI.SetActive (false);
+		configMenuUI.SetActive (true);
+		pauseMenuUI.SetActive (false);
 	}
 
 	public void QuitButton()
@@ -63,6 +62,7 @@ public class PauseMenu : MonoBehaviour {
 	//quitMenu
 	public void YesButton() {
 		SceneManager.LoadScene("StartMenu");
+		Time.timeScale = 1f;
 	}
 
 	public void NoButton()
@@ -70,7 +70,6 @@ public class PauseMenu : MonoBehaviour {
 		quitMenuUI.SetActive (false);
 		pauseMenuUI.SetActive (true);
 	}
-
 }
 
 
