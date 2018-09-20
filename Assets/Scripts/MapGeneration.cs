@@ -9,6 +9,7 @@ public class MapGeneration : MonoBehaviour {
 
 	void Start () {
 		GenerateLevel();
+		Time.timeScale = 1f;
 	}
 	
 	void GenerateLevel(){
