@@ -24,14 +24,19 @@ public class Player : MonoBehaviour {
     void Reset(){
         
     }
+    void Awake() {
+        GameManager.instance.playerRb = GetComponent<Rigidbody2D>();    
+    }
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         GameManager.instance.player = this;
-        GameManager.instance.playerRb = rb;
         speed = maxSpeed;
         speed *= 10;
         sprite = GetComponentInParent<SpriteRenderer>();
         playerLife = GameObject.FindGameObjectWithTag("PlayerLife").GetComponent<PlayerLife>();
+        if(PlayerPrefs.GetInt("Mode") == 1){
+            GameManager.instance.LoadGame();
+        }
     }
     void FixedUpdate() {
        Movement();

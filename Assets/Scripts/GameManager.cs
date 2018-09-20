@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
-	void Start() {
-		playerRb = player.GetComponent<Rigidbody2D>();
+	void OnEnable() {
 		
+		//playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
 		print(PlayerPrefs.GetInt("Mode"));
 
 		if(PlayerPrefs.GetInt("Mode") == 0){
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
 	}
 	public void LoadGame()
 	{
+		print("Jogo Carregado!");
 		if (File.Exists(Path.Combine(Application.streamingAssetsPath, FILE_PATH))){
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Path.Combine(Application.streamingAssetsPath, FILE_PATH), FileMode.Open);

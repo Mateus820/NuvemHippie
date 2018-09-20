@@ -61,6 +61,7 @@ public class PauseMenu : MonoBehaviour {
 
 	//quitMenu
 	public void YesButton() {
+		GameManager.instance.SaveGame();
 		SceneManager.LoadScene("StartMenu");
 		Time.timeScale = 1f;
 	}
