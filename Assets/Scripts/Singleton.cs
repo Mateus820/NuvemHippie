@@ -6,15 +6,8 @@ public class Singleton : MonoBehaviour {
 
 	public static Singleton instance;
 	public Player player;
-	void Awake() {
-		if(instance == null){
-			instance = this;
-		}
-		else if(instance != this){
-			Destroy(this.gameObject);
-		}
-	}
-	public static Singleton Instance
+	
+	public static Singleton GetInstance
 	{
 		get
 		{

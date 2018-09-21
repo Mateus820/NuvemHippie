@@ -9,8 +9,11 @@ public class Fly_Enemy : MonoBehaviour {
 	public Rigidbody2D homeRb;
 	public float speed;
 	public bool chase;
-	void Start () {
-		
+
+	void Start()
+	{
+		targetRb = Singleton.GetInstance.player.rb;
+		//Erro;
 	}
 	void Update () {
 		if(chase){

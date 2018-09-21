@@ -249,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749714909}
   - component: {fileID: 749714910}
+  - component: {fileID: 749714911}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -281,9 +282,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLife: {fileID: 691481250}
-  player: {fileID: 0}
-  playerRb: {fileID: 0}
+  player: {fileID: 1565795215}
+  playerRb: {fileID: 1565795214}
   FILE_PATH: saveGameData.dat
+--- !u!114 &749714911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749714908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d551dcaa8ea38a44a9848a498e36d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1565795215}
 --- !u!1001 &770046026
 Prefab:
   m_ObjectHideFlags: 0
@@ -370,6 +383,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114302575698048366, guid: 8b6bfd6a0944a4246948a4b7c2e5c14f,
+        type: 2}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1565795214}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b6bfd6a0944a4246948a4b7c2e5c14f, type: 2}
   m_IsPrefabParent: 0
@@ -488,6 +506,12 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 50711610462774982, guid: 8b6bfd6a0944a4246948a4b7c2e5c14f,
     type: 2}
   m_PrefabInternal: {fileID: 862302252}
+--- !u!114 &1565795215 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114302575698048366, guid: 8b6bfd6a0944a4246948a4b7c2e5c14f,
+    type: 2}
+  m_PrefabInternal: {fileID: 862302252}
+  m_Script: {fileID: 11500000, guid: a45ec15af1844b74cb39d9f342f8d6e3, type: 3}
 --- !u!1 &1749764694
 GameObject:
   m_ObjectHideFlags: 0
