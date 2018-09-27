@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 58577960911885580}
   - component: {fileID: 114180290161858372}
   - component: {fileID: 114113667560811336}
+  - component: {fileID: 95970348844908498}
   m_Layer: 9
   m_Name: Sprite
   m_TagString: Enemy
@@ -205,6 +206,24 @@ CircleCollider2D:
   m_Offset: {x: 0.00000014191583, y: 0.060420156}
   serializedVersion: 2
   m_Radius: 0.0613308
+--- !u!95 &95970348844908498
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1830496498365546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0449a1610ccddff46aa4e03bb28806d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114108421484479454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feabc612c21bb534db95b4732019ebed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLife: {fileID: 0}
 --- !u!114 &114481141488195440
 MonoBehaviour:
   m_ObjectHideFlags: 1
