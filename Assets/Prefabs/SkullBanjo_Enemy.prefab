@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 95546726488719446}
   - component: {fileID: 61516821853014594}
   - component: {fileID: 114600879703894396}
+  - component: {fileID: 114550565602203460}
   m_Layer: 9
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +154,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114550565602203460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406655880551248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29aa777ec77a1743a242d7741e23b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLife: 1
 --- !u!114 &114600879703894396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feabc612c21bb534db95b4732019ebed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLife: {fileID: 0}
 --- !u!114 &114652905366469656
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,7 +13,6 @@ public class Fly_Enemy : MonoBehaviour {
 	void Start()
 	{
 		targetRb = Singleton.GetInstance.player.rb;
-		//Erro;
 	}
 	void Update () {
 		if(chase){

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class EnemyEarthDamage : MonoBehaviour {
 
-	private PlayerLife playerLife;
-	void Start () {
-		playerLife = GameObject.FindGameObjectWithTag("PlayerLife").GetComponent<PlayerLife>();
+	[SerializeField] private PlayerLife playerLife;
+
+	void Start() {
+		playerLife = Singleton.GetInstance.playerLife.GetComponent<PlayerLife>();
 	}
 	void OnTriggerEnter2D(Collider2D other) {
-		print("Coll");
 		if(other.gameObject.tag == "Player"){
 			playerLife.CurrentLife--;
-		}	
+		}
+		if(other.gameObject.tag == "Weapon"){
+			EnemyLife en = GetComponent<EnemyLife>();
+			en.currentLife--;
+		}
 	}
 }

@@ -21,12 +21,6 @@ public class Player : MonoBehaviour {
     private IEnumerator damageDlay;
     public SpriteRenderer sprite;
 
-    void Reset(){
-        
-    }
-    void Awake() {
-
-    }
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         GameManager.instance.playerRb = rb;    
@@ -84,11 +78,11 @@ public class Player : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other) {
         if(canReceiveDamage) {
-		    print("Coll");
+		    /*print("Coll");
 		    if(other.gameObject.tag == "Enemy"){
 			    playerLife.CurrentLife--;
 		    }
-            
+            */
         }
 	}
     void DamageReceived() {

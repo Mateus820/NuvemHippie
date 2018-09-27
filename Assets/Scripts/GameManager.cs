@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour {
 	}
 	void OnEnable() {
 		
-		//playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
 		print(PlayerPrefs.GetInt("Mode"));
 
 		if(PlayerPrefs.GetInt("Mode") == 0){
@@ -78,6 +77,6 @@ public class GameManager : MonoBehaviour {
 	}
 	void OnApplicationQuit() {
 		SaveGame();
-		print("Jogo Salvo");
+		//print("Jogo Salvo");
 	}
 }

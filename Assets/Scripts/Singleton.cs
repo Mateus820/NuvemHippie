@@ -6,6 +6,7 @@ public class Singleton : MonoBehaviour {
 
 	public static Singleton instance;
 	public Player player;
+	public PlayerLife playerLife;
 	
 	public static Singleton GetInstance
 	{
