@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	void OnApplicationQuit() {
-		SaveGame();
+		//SaveGame();
 		//print("Jogo Salvo");
 	}
 }

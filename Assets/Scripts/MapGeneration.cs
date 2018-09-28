@@ -5,7 +5,6 @@ using UnityEngine;
 public class MapGeneration : MonoBehaviour {
 
 	public int levelNumber;
-	public Texture2D map;
 	public CameraFollow cameraFollow;
 	public Level[] levels;
 	public ColorTile[] colorTile;
