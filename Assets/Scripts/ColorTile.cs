@@ -7,4 +7,5 @@ public class ColorTile{
 	
 	public Color color;
 	public GameObject prefab;
+	public bool canPoint;
 }

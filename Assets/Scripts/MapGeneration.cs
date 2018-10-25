@@ -5,6 +5,8 @@ using UnityEngine;
 public class MapGeneration : MonoBehaviour {
 
 	public int levelNumber;
+	[SerializeField] private GameObject pointPrefab;
+	[SerializeField] private Transform points;
 	public CameraFollow cameraFollow;
 	public Level[] levels;
 	public ColorTile[] colorTile;
@@ -29,7 +31,12 @@ public class MapGeneration : MonoBehaviour {
 		Color pixelColor = levels[levelNumber].map.GetPixel(x, y);
 		
 		if(pixelColor.a == 0){
-			//Ignore is a transparrent pixel;
+			foreach(ColorTile tile in colorTile){
+				if(tile.canPoint){
+					Vector2 position = new Vector2(x, y);
+					Instantiate(pointPrefab, position, Quaternion.identity, points);
+				}
+			}
 			return;
 		}
 		foreach (ColorTile tile in colorTile)
