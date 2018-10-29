@@ -18,7 +18,7 @@ public class Fly_Enemy : MonoBehaviour {
 		playerTransform = Singleton.GetInstance.player.transform;
 	}
 	void Update () {
-		if(true){
+		if(chase){
 			MoveTowards();
 		}
 		else if(!chase && rb.position != homeRb.position){
