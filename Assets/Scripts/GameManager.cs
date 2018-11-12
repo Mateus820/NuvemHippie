@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+	//Static reference;
 	public static GameManager instance;
 
 	public PlayerLife playerLife;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	public Rigidbody2D playerRb;
 	public string FILE_PATH = "saveGameData.dat";
 
+	//Singleton;
 	void Awake() {
 		if(instance == null){
 			instance = this;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	//Game mode to save and load;
 	void OnEnable() {
 		
 		print(PlayerPrefs.GetInt("Mode"));
@@ -33,6 +37,8 @@ public class GameManager : MonoBehaviour {
 			LoadGame();
 		}
 	}
+
+	//Save game in a binary file;
 	public void SaveGame()
 	{
 		BinaryFormatter bf = new BinaryFormatter();
@@ -47,6 +53,7 @@ public class GameManager : MonoBehaviour {
 		else{
 			save.lifes = playerLife.CurrentLife;
 		}
+
 		save.points = 0;
 		save.posx = playerRb.position.x;
 		save.posy = playerRb.position.y;
@@ -75,6 +82,7 @@ public class GameManager : MonoBehaviour {
 			print(playerPosition);
 		}
 	}
+	
 	void OnApplicationQuit() {
 		//SaveGame();
 		//print("Jogo Salvo");

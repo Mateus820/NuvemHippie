@@ -6,6 +6,9 @@ public class Player : MonoBehaviour {
 
     public float maxSpeed;
 	[SerializeField] private float speed;
+    public float Speed{
+        get{ return Input.GetAxisRaw("Horizontal");}
+    }
     public Rigidbody2D rb;
     public bool onGround;
     public bool jump;
@@ -15,7 +18,6 @@ public class Player : MonoBehaviour {
     public float jumpForce;
     public float playerSpeed;  //allows us to be able to change speed in Unity
     public Vector2 jumpHeight;
-    
     public Transform groundCheck;
     private PlayerLife playerLife;
     private IEnumerator damageDlay;

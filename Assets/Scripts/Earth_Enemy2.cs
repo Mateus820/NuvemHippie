@@ -22,6 +22,11 @@ public class Earth_Enemy2 : MonoBehaviour {
 			rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
 		}
 	}
+
+	public void Destroy(){
+		Destroy(gameObject);
+	}
+
 	IEnumerator TurnTime(){
 		if(!death){
 			while(turn){

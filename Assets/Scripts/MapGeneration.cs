@@ -31,12 +31,7 @@ public class MapGeneration : MonoBehaviour {
 		Color pixelColor = levels[levelNumber].map.GetPixel(x, y);
 		
 		if(pixelColor.a == 0){
-			foreach(ColorTile tile in colorTile){
-				if(tile.canPoint){
-					Vector2 position = new Vector2(x, y);
-					Instantiate(pointPrefab, position, Quaternion.identity, points);
-				}
-			}
+			//PointGenerator(x, y);
 			return;
 		}
 		foreach (ColorTile tile in colorTile)
@@ -45,6 +40,15 @@ public class MapGeneration : MonoBehaviour {
 			{
 				Vector2 position = new Vector2(x, y);
 				Instantiate(tile.prefab, position, Quaternion.identity, transform);
+			}
+		}
+	}
+
+	void PointGenerator(int x, int y){
+		foreach(ColorTile tile in colorTile){
+			if(tile.canPoint){
+				Vector2 position = new Vector2(x, y);
+				Instantiate(pointPrefab, position, Quaternion.identity, points);
 			}
 		}
 	}

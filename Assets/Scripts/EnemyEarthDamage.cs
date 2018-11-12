@@ -16,6 +16,10 @@ public class EnemyEarthDamage : MonoBehaviour {
 		if(other.gameObject.tag == "Weapon"){
 			EnemyLife en = GetComponent<EnemyLife>();
 			en.currentLife--;
+
+			var destroy = GetComponentInParent<Earth_Enemy2>();
+			if(destroy != null)
+				destroy.Destroy();
 		}
 	}
 }

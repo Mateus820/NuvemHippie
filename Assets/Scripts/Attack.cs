@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack : MonoBehaviour {
+
 	public float timeDelay;
 	public GameObject attack;
 	private IEnumerator dlay;
-	[SerializeField]
 	public bool attacking;
 
 	void Start () {
