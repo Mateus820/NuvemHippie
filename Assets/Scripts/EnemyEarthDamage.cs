@@ -10,9 +10,6 @@ public class EnemyEarthDamage : MonoBehaviour {
 		playerLife = Singleton.GetInstance.playerLife.GetComponent<PlayerLife>();
 	}
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.tag == "Player"){
-			playerLife.CurrentLife--;
-		}
 		if(other.gameObject.tag == "Weapon"){
 			EnemyLife en = GetComponent<EnemyLife>();
 			en.currentLife--;
@@ -21,5 +18,11 @@ public class EnemyEarthDamage : MonoBehaviour {
 			if(destroy != null)
 				destroy.Destroy();
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		if(other.gameObject.tag == "Player"){
+			playerLife.CurrentLife--;
+		}	
 	}
 }

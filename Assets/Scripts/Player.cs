@@ -78,15 +78,12 @@ public class Player : MonoBehaviour {
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
     }
-    void OnTriggerEnter2D(Collider2D other) {
-        if(canReceiveDamage) {
-		    /*print("Coll");
-		    if(other.gameObject.tag == "Enemy"){
-			    playerLife.CurrentLife--;
-		    }
-            */
+    void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Enemy"){
+            playerLife.CurrentLife--;
         }
 	}
+    
     void DamageReceived() {
         damageDlay = DamageDlay();
         StartCoroutine (damageDlay);

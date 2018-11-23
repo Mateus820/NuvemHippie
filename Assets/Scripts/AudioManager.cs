@@ -1,14 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour {
 
-	//Create a game audio manager and a Serializable class to play the audio;
-	//Create fuctions to play, pause e stop audio;
-	//singleton;
+	public static AudioManager instance;
+	[SerializeField] private Sound[] sounds;
 
-	public void Play(){
-		
+	void Awake() {
+		if(instance != null){
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else if(instance != this)
+			//Destroy(gameObject);
+
+		SetSounds();
 	}
+
+	void SetSounds(){
+		for (int i = 0; i < sounds.Length; i++)
+		{
+			sounds[i].source = gameObject.AddComponent<AudioSource>();
+			sounds[i].source.clip = sounds[i].sound;
+			sounds[i].source.volume = sounds[i].volume;
+			sounds[i].source.playOnAwake = sounds[i].playOnAwake;
+			sounds[i].source.loop = sounds[i].loop;
+			if(sounds[i].playOnAwake) sounds[i].source.Play();
+		}
+	}
+
+	public void Play(string name){
+		Sound s = Array.Find(sounds, sound => sound.name == name);
+		if(s == null){
+			Debug.LogWarning("Sound: " + name + "doesn't exist!");
+			return;
+		}
+		s.source.Play();
+       
+	}
+}
+
+[Serializable]
+public class Sound
+{
+	public string name;
+	public AudioClip sound;
+	[Range(0f, 1f)] public float volume;
+	public bool playOnAwake;
+	public bool loop;
+	[HideInInspector] public AudioSource source;
 }
