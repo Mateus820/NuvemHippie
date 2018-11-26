@@ -18,11 +18,9 @@ public class EnemyEarthDamage : MonoBehaviour {
 			if(destroy != null)
 				destroy.Destroy();
 		}
-	}
-
-	void OnCollisionEnter2D(Collision2D other) {
 		if(other.gameObject.tag == "Player"){
-			playerLife.CurrentLife--;
+			if(playerLife != null)
+				playerLife.CurrentLife--;
 		}	
 	}
 }

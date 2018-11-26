@@ -59,6 +59,10 @@ public class PauseMenu : MonoBehaviour {
 		pauseMenuUI.SetActive (true);
 	}
 
+	public void MuteButtom(){
+		//AudioManager.instance.Pause("MainMenu");
+	}
+
 	//quitMenu
 	public void YesButton() {
 		GameManager.instance.SaveGame();
