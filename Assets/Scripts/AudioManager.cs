@@ -9,12 +9,13 @@ public class AudioManager : MonoBehaviour {
 	[SerializeField] private Sound[] sounds;
 
 	void Awake() {
-		if(instance != null){
+		if(instance == null){
+			print("AudioManager");
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		}
 		else if(instance != this)
-			//Destroy(gameObject);
+			Destroy(gameObject);
 
 		SetSounds();
 	}
